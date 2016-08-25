@@ -46,10 +46,17 @@ public class BubblePopupWindow extends PopupWindow {
         show(parent, Gravity.TOP, getMeasuredWidth() / 2);
     }
 
-    public void show(View parent, int gravity){
+    public void show(View parent, int gravity) {
         show(parent, gravity, getMeasuredWidth() / 2);
     }
 
+    /**
+     * 显示弹窗
+     *
+     * @param parent
+     * @param gravity
+     * @param bubbleOffset 气泡尖角位置偏移量。默认位于中间
+     */
     public void show(View parent, int gravity, float bubbleOffset) {
         BubbleRelativeLayout.BubbleLegOrientation orientation = BubbleRelativeLayout.BubbleLegOrientation.LEFT;
         if (!this.isShowing()) {
@@ -82,10 +89,10 @@ public class BubblePopupWindow extends PopupWindow {
                     showAtLocation(parent, Gravity.NO_GRAVITY, location[0], location[1] - getMeasureHeight());
                     break;
                 case Gravity.RIGHT:
-                    showAtLocation(parent, Gravity.NO_GRAVITY, location[0] + parent.getWidth(), location[1]-(parent.getHeight()/2));
+                    showAtLocation(parent, Gravity.NO_GRAVITY, location[0] + parent.getWidth(), location[1] - (parent.getHeight() / 2));
                     break;
                 case Gravity.LEFT:
-                    showAtLocation(parent, Gravity.NO_GRAVITY, location[0] - getMeasuredWidth(), location[1]-(parent.getHeight()/2));
+                    showAtLocation(parent, Gravity.NO_GRAVITY, location[0] - getMeasuredWidth(), location[1] - (parent.getHeight() / 2));
                     break;
                 default:
                     break;
