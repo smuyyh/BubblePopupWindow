@@ -20,8 +20,14 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+/**
+ * 气泡布局
+ */
 public class BubbleRelativeLayout extends RelativeLayout {
 
+    /**
+     * 气泡尖角方向
+     */
     public enum BubbleLegOrientation {
         TOP, LEFT, RIGHT, BOTTOM, NONE
     }
@@ -110,6 +116,9 @@ public class BubbleRelativeLayout extends RelativeLayout {
         super.onConfigurationChanged(newConfig);
     }
 
+    /**
+     * 尖角path
+     */
     private void renderBubbleLegPrototype() {
         mBubbleLegPrototype.moveTo(0, 0);
         mBubbleLegPrototype.lineTo(PADDING * 1.5f, -PADDING / 1.5f);
@@ -122,6 +131,12 @@ public class BubbleRelativeLayout extends RelativeLayout {
         mBubbleOrientation = bubbleOrientation;
     }
 
+    /**
+     * 根据显示方向，获取尖角位置矩阵
+     * @param width
+     * @param height
+     * @return
+     */
     private Matrix renderBubbleLegMatrix(final float width, final float height) {
 
         final float offset = Math.max(mBubbleLegOffset, MIN_LEG_DISTANCE);

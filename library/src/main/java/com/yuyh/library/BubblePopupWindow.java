@@ -76,7 +76,7 @@ public class BubblePopupWindow extends PopupWindow {
                 default:
                     break;
             }
-            bubbleView.setBubbleParams(orientation, bubbleOffset);
+            bubbleView.setBubbleParams(orientation, bubbleOffset); // 设置气泡布局方向及尖角偏移
 
             int[] location = new int[2];
             parent.getLocationOnScreen(location);
@@ -102,16 +102,23 @@ public class BubblePopupWindow extends PopupWindow {
         }
     }
 
+    /**
+     * 测量高度
+     * @return
+     */
     public int getMeasureHeight() {
         getContentView().measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         int popHeight = getContentView().getMeasuredHeight();
         return popHeight;
     }
 
+    /**
+     * 测量宽度
+     * @return
+     */
     public int getMeasuredWidth() {
         getContentView().measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         int popWidth = getContentView().getMeasuredWidth();
         return popWidth;
     }
-
 }

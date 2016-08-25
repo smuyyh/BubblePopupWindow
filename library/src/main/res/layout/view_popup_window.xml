@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.yuyh.library.BubbleRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:intro="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/brlBackground"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
-    intro:cornerRadius="10"
-    intro:halfBaseOfLeg="18dp"
-    intro:padding="18dp"
-    intro:shadowColor="#64000000"
-    intro:strokeWidth="5">
+    app:cornerRadius="10"
+    app:halfBaseOfLeg="18dp"
+    app:padding="18dp"
+    app:shadowColor="#64000000"
+    app:strokeWidth="5">
 
 </com.yuyh.library.BubbleRelativeLayout>
