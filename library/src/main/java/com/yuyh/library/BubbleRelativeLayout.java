@@ -17,15 +17,10 @@ import android.graphics.RectF;
 import android.graphics.Shader.TileMode;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 public class BubbleRelativeLayout extends RelativeLayout {
-
-    public interface BubbleLayoutChangeListener {
-        void onConfigurationChanged(final Configuration newConfig);
-    }
 
     public enum BubbleLegOrientation {
         TOP, LEFT, RIGHT, BOTTOM, NONE
@@ -42,7 +37,6 @@ public class BubbleRelativeLayout extends RelativeLayout {
     private final Path mPath = new Path();
     private final Path mBubbleLegPrototype = new Path();
     private final Paint mPaint = new Paint(Paint.DITHER_FLAG);
-    private BubbleLayoutChangeListener mBubbleLayoutChangeListener = null;
 
     private float mBubbleLegOffset = 0.75f;
     private BubbleLegOrientation mBubbleOrientation = BubbleLegOrientation.LEFT;
@@ -58,15 +52,6 @@ public class BubbleRelativeLayout extends RelativeLayout {
     public BubbleRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs);
-    }
-
-    public void setBubbleLayoutChangeListener(final BubbleLayoutChangeListener bubbleLayoutChangeListener) {
-        mBubbleLayoutChangeListener = bubbleLayoutChangeListener;
-    }
-
-    private int dpToPx(float dp) {
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        return (int) ((dp * displayMetrics.density) + 0.5);
     }
 
     private void init(final Context context, final AttributeSet attrs) {
@@ -123,10 +108,6 @@ public class BubbleRelativeLayout extends RelativeLayout {
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
-        if (mBubbleLayoutChangeListener != null) {
-            mBubbleLayoutChangeListener.onConfigurationChanged(newConfig);
-        }
     }
 
     private void renderBubbleLegPrototype() {
