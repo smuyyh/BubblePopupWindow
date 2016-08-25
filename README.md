@@ -4,6 +4,11 @@ Android 实现各个方向的气泡弹窗，可控制气泡尖角偏移量。
 ### 截图
 <img src="https://github.com/smuyyh/BubblePopupWindow/blob/master/screenshot/screen.png?raw=true" width=280/>
 
+### 依赖
+```
+compile 'com.yuyh.bubble:library:1.0.0'
+```
+
 ### 使用
 - 默认弹窗
 ```java
