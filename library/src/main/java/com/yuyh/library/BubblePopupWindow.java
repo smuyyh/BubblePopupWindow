@@ -22,11 +22,11 @@ public class BubblePopupWindow extends PopupWindow {
         setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        //setFocusable(true);
-        //setOutsideTouchable(false);
-        //setClippingEnabled(false);
+        setFocusable(true);
+        setOutsideTouchable(false);
+        setClippingEnabled(false);
 
-        ColorDrawable dw = new ColorDrawable(66666666);
+        ColorDrawable dw = new ColorDrawable(0);
         setBackgroundDrawable(dw);
     }
 
