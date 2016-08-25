@@ -1,10 +1,10 @@
 # BubblePopupWindow
-## Android 实现各个方向的气泡弹窗（也可直接使用气泡布局）
+Android 实现各个方向的气泡弹窗（也可直接使用气泡布局）
 
-## 截图
+### 截图
 <img src="https://github.com/smuyyh/BubblePopupWindow/blob/master/screenshot/screen.png?raw=true" width=280/>
 
-## 使用
+### 使用
 - 默认弹窗
 ```java
 BubblePopupWindow leftTopWindow = new BubblePopupWindow(MainActivity.this);
